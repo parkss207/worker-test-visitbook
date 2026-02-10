@@ -7,6 +7,6 @@ pages_build_output_dir = ".svelte-kit/cloudflare"
 # 2. Add the database_id from the output below
 [[d1_databases]]
 binding = "DB"
-database_name = "visitbook-db"
+database_name = "guestbook-db"
 database_id = "d6025a5d-cccb-4e75-a905-e85749e76215" # Replace with actual ID
 
