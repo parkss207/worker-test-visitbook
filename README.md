@@ -76,6 +76,27 @@ bun run build
 ### 개발 서버 포트 변경
 `vite.config.js`에서 `server.port` 설정 추가
 
+## Cloudflare D1 데이터베이스 설정 (방명록)
+
+### 1. 데이터베이스 생성
+```bash
+bunx wrangler d1 create visitbook-db
+```
+위 명령어를 실행하면 `database_id`가 출력됩니다. 이 ID를 `wrangler.toml` 파일의 `database_id` 항목에 붙여넣으세요.
+
+### 2. 스키마 적용
+데이터베이스 테이블을 생성합니다.
+
+**로컬 개발용 (임시 DB):**
+```bash
+bunx wrangler d1 execute visitbook-db --local --file=./schema.sql
+```
+
+**실제 배포용 (Cloudflare D1):**
+```bash
+bunx wrangler d1 execute visitbook-db --remote --file=./schema.sql
+```
+
 ## 라이선스
 
 Private

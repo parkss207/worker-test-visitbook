@@ -1,3 +1,12 @@
 name = "worker-test-visitbook"
 compatibility_date = "2024-01-01"
 pages_build_output_dir = ".svelte-kit/cloudflare"
+
+# Cloudflare D1 Database Binding
+# 1. Run `npx wrangler d1 create visitbook-db` to create the database
+# 2. Add the database_id from the output below
+[[d1_databases]]
+binding = "DB"
+database_name = "visitbook-db"
+database_id = "d6025a5d-cccb-4e75-a905-e85749e76215" # Replace with actual ID
+
